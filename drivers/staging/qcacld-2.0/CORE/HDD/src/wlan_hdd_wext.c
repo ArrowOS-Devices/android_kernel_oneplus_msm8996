@@ -5356,6 +5356,8 @@ int wlan_hdd_update_phymode(struct net_device *net, tHalHandle hal,
     eHddDot11Mode hdd_dot11mode = phddctx->cfg_ini->dot11Mode;
     eCsrBand curr_band = eCSR_BAND_ALL;
 
+    memset(&smeconfig, 0, sizeof(smeconfig));
+
     old_phymode = sme_GetPhyMode(hal);
 
     if (WNI_CFG_CHANNEL_BONDING_MODE_DISABLE !=

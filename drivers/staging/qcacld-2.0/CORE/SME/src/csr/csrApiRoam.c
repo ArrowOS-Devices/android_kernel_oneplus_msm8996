@@ -18066,6 +18066,8 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
    VOS_STATUS vosStatus;
    WLANTL_TRANSFER_STA_TYPE *pTlStats;
 
+   memset(&staEntry, 0, sizeof(staEntry));
+
    if( csrIsAllSessionDisconnected(pMac) )
    {
       //smsLog(pMac, LOGW, "csrGetStatistics: wrong state curState(%d) not connected", pMac->roam.curState);
